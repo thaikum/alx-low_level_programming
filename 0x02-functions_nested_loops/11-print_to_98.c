@@ -1,3 +1,4 @@
+
 #include "main.h"
 
 /**
@@ -11,9 +12,7 @@ void print_to_98(int n)
 	if (n < 98)
 		for (; n < 98; n++)
 		{
-			if (n >= 10)
-				_putchar('0' + n / 10);
-			_putchar('0' + n % 10);
+			print(n);
 			_putchar(',');
 			_putchar(' ');
 		}
@@ -21,16 +20,25 @@ void print_to_98(int n)
 		for (; n >= 99; n--)
 		{
 			k = n;
-
-			while (k > 10)
-			{
-				_putchar(k / 10);
-				k /= 10;
-			}
-
+			print(n);
 			_putchar(',');
 			_putchar(' ');
 		}
-	_putchar('9');
-	_putchar('8');
+	print(98);
+}
+
+/**
+ * print - uses _putchar to print a number
+ */
+void print(int n)
+{
+	if (n < 0){
+		_putchar('-');
+		n = -n;
+	}
+
+	if (n / 10)
+		print(n/10);
+
+	_putchar('0' + n % 10);
 }
