@@ -13,8 +13,8 @@ int main(void)
 
 	for (index = 0; index < 8; index++)
 	{
-		_putchar(k[index]);
+		putchar(k[index]);
 	}
-	_putchar('\n');
+	putchar('\n');
 	return (0);
 }
