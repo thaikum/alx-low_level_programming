@@ -9,5 +9,5 @@
  */
 int print_sign(int n)
 {
-	return (n > '0' ? '+' : n < '0' ? '-' : '0');
+	return (n > '0' ? 1 : n < '0' ? -1 : 0);
 }
