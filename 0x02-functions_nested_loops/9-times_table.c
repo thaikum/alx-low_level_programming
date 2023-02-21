@@ -19,7 +19,7 @@ void times_table(void)
 			if (prod >= 10)
 				_putchar('0' + prod / 10);
 			_putchar('0' + prod % 10);
-			_putchar(',')
+			_putchar(',');
 			_putchar('\t');
 		}
 		_putchar('\n');
