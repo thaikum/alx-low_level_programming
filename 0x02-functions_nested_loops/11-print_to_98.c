@@ -16,7 +16,6 @@ void print_to_98(int n)
 	else
 		for (; n >= 99; n--)
 		{
-			k = n;
 			print(n);
 			_putchar(',');
 			_putchar(' ');
