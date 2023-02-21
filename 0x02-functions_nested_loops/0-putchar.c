@@ -16,4 +16,5 @@ int main(void)
 		putchar(k[index]);
 	}
 	putchar('\n');
+	return (0);
 }
