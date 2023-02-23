@@ -22,9 +22,9 @@ int main(void)
 			printf("%d", k);
 
 		if (k != 100)
-			_putchar(' ');
+			printf(" ");
 	}
-	_putchar('\n');
+	printf("\n");
 
 	return (0);
 }
