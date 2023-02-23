@@ -18,7 +18,7 @@ int main(void)
 		else if (k % 5 == 0)
 			print("Buzz");
 		else
-			_putchar('0' + k);
+			print_number(k);
 
 		_putchar(' ');
 	}
@@ -38,4 +38,22 @@ void print(char *word)
 
 	while (word[k++] != '\0')
 		_putchar(word[k - 1]);
+}
+
+/**
+ * print_number - uses _putchar to print a number
+ * @n: the number to be printed
+ */
+void print_number(int n)
+{
+	if (n < 0)
+	{
+		_putchar('-');
+		n = -n;
+	}
+
+	if (n / 10)
+		print(n / 10);
+
+	_putchar('0' + n % 10);
 }
