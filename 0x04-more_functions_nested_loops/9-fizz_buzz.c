@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -12,48 +13,18 @@ int main(void)
 	for (k = 1; k <= 100; k++)
 	{
 		if (k % 3 == 0 && k % 5 == 0)
-			print("FizzBuzz");
+			printf("FizzBuzz");
 		else if (k % 3 == 0)
-			print("Fizz");
+			printf("Fizz");
 		else if (k % 5 == 0)
-			print("Buzz");
+			printf("Buzz");
 		else
-			print_number(k);
+			printf("%d", k);
 
-		_putchar(' ');
+		if (k != 100)
+			_putchar(' ');
 	}
 	_putchar('\n');
 
 	return (0);
-}
-
-/**
- * print - prints a word
- * @word: word to be printed
- *
- */
-void print(char *word)
-{
-	int k = 0;
-
-	while (word[k++] != '\0')
-		_putchar(word[k - 1]);
-}
-
-/**
- * print_number - uses _putchar to print a number
- * @n: the number to be printed
- */
-void print_number(int n)
-{
-	if (n < 0)
-	{
-		_putchar('-');
-		n = -n;
-	}
-
-	if (n / 10)
-		print_number(n / 10);
-
-	_putchar('0' + n % 10);
 }
