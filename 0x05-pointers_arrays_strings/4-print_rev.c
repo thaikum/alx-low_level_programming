@@ -7,8 +7,11 @@
  */
 void print_rev(char *str)
 {
-	int x = strlen(str);
+	int x = strlen(str) - 1;
 
-	while(x--)
-		_putchar(str[x+1]);
+	while(x >= 0)
+	{
+		_putchar(str[x]);
+	}
+	_putchar('\n');
 }
