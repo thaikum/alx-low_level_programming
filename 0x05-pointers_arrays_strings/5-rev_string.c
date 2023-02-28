@@ -5,7 +5,9 @@
  */
 void rev_string(char *s)
 {
-	char *z = s;
+	char *z;
+	
+	strcpy(z, s);
 	int x = strlen(s), y = 0;
 
 	for (; x >= 0; x--, y++)
