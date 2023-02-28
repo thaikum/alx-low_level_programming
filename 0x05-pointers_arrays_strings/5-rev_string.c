@@ -1,15 +1,14 @@
 #include <string.h>
 /**
- * rev_str - reverses a string
+ * rev_string - reverses a string
  * @s: string to reverse
  */
 void rev_string(char *s)
 {
 	char *z;
-	
-	strcpy(z, s);
 	int x = strlen(s), y = 0;
 
+	strcpy(z, s);
 	for (; x >= 0; x--, y++)
 		s[y] = z[x];
 }
