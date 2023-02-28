@@ -5,10 +5,13 @@
  */
 void rev_string(char *s)
 {
-	char z[strlen(s)];
 	int x = strlen(s) - 1, y = 0;
+	char t;
 
-	strcpy(z, s);
-	for (; x >= 0; x--, y++)
-		s[y] = z[x];
+	for (; x > y; x--, y++)
+	{
+		t = x[x];
+		s[x] = s[y];
+		s[y] = t;
+	}
 }
