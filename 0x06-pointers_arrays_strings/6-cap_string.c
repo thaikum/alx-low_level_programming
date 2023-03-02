@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 /**
  * cap_string - capitalizes a string
@@ -29,7 +30,7 @@ char *cap_string(char *str)
  */
 int is_special(char c)
 {
-	char cs[12] = ",;.!?\"(){} ";
+	char cs[12] = ",;.!?\"(){} \n";
 	int x = 0;
 
 	while (x < 11)
