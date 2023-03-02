@@ -1,4 +1,3 @@
-
 /**
  * string_toupper - converts all uppercase letters to lowercase
  * @str: the string
@@ -12,7 +11,7 @@ char *string_toupper(char *str)
 	while (str[x] != '\0')
 	{
 		if (str[x] >= 'A' && str[x] <= 'Z')
-			str[x] -= 32;
+			str[x] += 32;
 		x++;
 	}
 	return (str);
