@@ -30,7 +30,7 @@ char *cap_string(char *str)
  */
 int is_special(char c)
 {
-	char cs[12] = "\n,;.!?\"(){} ";
+	char cs[12] = "\n\t,;.!?\"(){} ";
 	int x = 0;
 
 	while (x < 11)
