@@ -5,4 +5,5 @@ void _putchar(int);
 void *_strncat(char *dest, char *src, int n);
 void *_strncpy(char *dest, char *src, int n);
 int _strcmp(char *s1, char *s2);
+void reverse_array(int *a, int n);
 #endinf
