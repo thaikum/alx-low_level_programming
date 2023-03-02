@@ -29,10 +29,10 @@ char *cap_string(char *str)
  */
 int is_special(char c)
 {
-	char cs[12] = "\n\t,;.!?\"(){} ";
+	char cs[13] = "\n\t,;.!?\"(){} ";
 	int x = 0;
 
-	while (x < 11)
+	while (x < 13)
 	{
 		if (cs[x] == c)
 			return (1);
