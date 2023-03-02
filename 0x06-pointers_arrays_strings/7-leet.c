@@ -6,7 +6,7 @@
  */
 char *leet(char *src)
 {
-	char str1[] = "aeioutlAEIOUTL";
+	char str1[] = "aeotlAEOTL";
 	char str2[] = "4307143071";
 
 	int x, y;
