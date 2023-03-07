@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stddef.h>
 /**
  * _strchr - returns the first occurence of the character c in the string s,
  * or NULL if the character is not found
