@@ -10,22 +10,15 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int k = 0;
-	char *t;
+	char *ptr;
 
-tt:
-	t = strchr(haystack, needle[0]);
+	ptr = haystack;
 
-	if (t != NULL)
-		for (; needle[k] != '\0'; k++)
-			if (needle[k] != *(t + k))
-			{
-				haystack = t + 1;
-				goto tt;
-			}
-
-	if (k == strlen(needle))
-		return (t);
-	else
-		return (NULL);
+	while (*ptr)
+	{
+		if (strncmp(ptr, needle, strlen(needle)) == 0)
+			return (ptr);
+		ptr++;
+	}
+	return (NULL);
 }
