@@ -1,0 +1,11 @@
+/**
+ * _strspn - returns the number of bytes in the initial segment of s
+ * which consist only of the bytes from accept
+ * @s: the string to check from
+ * @accept: the string to check for
+ *
+ * Return: the number o f bytes in the inital segment of s
+ */
+unsigned int _strspn(char *s, char *accept)
+{
+	
