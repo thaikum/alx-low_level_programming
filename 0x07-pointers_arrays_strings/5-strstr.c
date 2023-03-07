@@ -1,4 +1,5 @@
 #include <string.h>
+#include <stddef.h>
 /**
  * _strstr - finds the first occurrence of the substring needle
  * in the string haystack.
@@ -26,5 +27,5 @@ tt:
 	if (k == strlen(needle))
 		return (t);
 	else
-		return (haystack + strlen(haystack));
+		return (NULL);
 }
