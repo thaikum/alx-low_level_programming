@@ -1,0 +1,24 @@
+#include <string.h>
+
+/**
+ * _strcat - concatenates two strings
+ * @dest: the destination string
+ * @src: the string to be added to the dest
+ *
+ * Return: return a concatenated string
+ */
+char *_strcat(char *dest, char *src)
+{
+	int s = strlen(dest), x = 0;
+
+	while (src[x] != '\0')
+	{
+		dest[s] = src[x];
+		s++;
+		x++;
+	}
+
+	dest[s] = '\0';
+
+	return (dest);
+}
