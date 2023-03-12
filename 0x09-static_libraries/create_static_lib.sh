@@ -4,5 +4,5 @@ do
     gcc -c $each -o $(echo $each | tr .c .o)
 done
 
-ar rc liball.a $(ls | grep '\.o')
+ar rcs liball.a $(ls | grep '\.o')
 ranlib liball.a
