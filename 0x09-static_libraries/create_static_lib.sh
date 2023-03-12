@@ -1,5 +1,5 @@
 #!/bin/bash
 gcc -c *.c
 
-ar rcs liball.a $(ls | grep '\.o')
+ar rcs liball.a *.o
 ranlib liball.a
