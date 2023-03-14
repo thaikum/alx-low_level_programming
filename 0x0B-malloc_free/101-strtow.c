@@ -43,12 +43,11 @@ int count_size(char *str)
  */
 void initializer(int spaces, char *str, char **final)
 {
-	int y = 0, x, counter = 0, started, sub_size;
+	int y = 0, x, counter = 0, started;
 
 	for (x = 0; x <= spaces; x++)
 	{
 		started = 0;
-		sub_size = 0;
 		counter = 0;
 
 		for (; str[y] != '\0'; y++)
@@ -77,8 +76,8 @@ void initializer(int spaces, char *str, char **final)
 char **strtow(char *str)
 {
 	char *each, **final;
-	int spaces = 0, x, space_flag = 0, started = 0;
-	int y = 0, sub_size = 0, counter = 0;
+	int spaces = 0, x, started = 0;
+	int y = 0, sub_size = 0;
 
 	if (str == NULL || strcmp(str, "") != 0)
 		return (NULL);
@@ -98,7 +97,6 @@ char **strtow(char *str)
 			{
 				sub_size++;
 				started = 1;
-				space_flag = 1;
 				if (str[y + 1] == '\0')
 				{
 					each = malloc((sub_size + 1) * sizeof(char));
