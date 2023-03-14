@@ -2,19 +2,15 @@
 #include <string.h>
 
 /**
- * strtow - splits a sentence on its spaces
- * @str: the string to split
+ * count_size - counts the number of spaces
+ * @str: the string to count spaces
  *
- * Return: pointer to an array of strings
+ * Return: the number of real spaces
  */
-char **strtow(char *str)
+int count_size(char *str)
 {
-	char *each, **final;
-	int spaces = 0, x, space_flag = 0, started = 0;
-	int y = 0, sub_size = 0, counter = 0;
+	int started = 0, space_flag = 0, spaces = 0, x;
 
-	if (str == NULL || strcmp(str, ""))
-		return (NULL);
 	for (x = 0; str[x] != '\0'; x++)
 	{
 		if (started == 0)
@@ -36,34 +32,18 @@ char **strtow(char *str)
 			}
 		}
 	}
+	return (spaces);
+}
 
-	final = malloc((spaces + 2) * sizeof(char *));
-
-	if (final == NULL)
-		return (NULL);
-
-	for (x = 0; x <= spaces; x++)
-	{
-		started = 0;
-		sub_size = 0;
-		for (; str[y] != '\0'; y++)
-		{
-			if (str[y] != ' ')
-			{
-				sub_size++;
-				started = 1;
-				space_flag = 1;
-			}
-			else if (str[y] == ' ' && started == 1)
-			{
-				each = malloc((sub_size + 1) * sizeof(char));
-				final[x] = each;
-				break;
-			}
-		}
-	}
-
-	y = 0;
+/**
+ * initializer - initializes the empty array final with str values
+ * @spaces: size of the array
+ * @str: non splited string
+ * @final: splited string
+ */
+void initializer(int spaces, char *str, char **final)
+{
+	int y = 0, x, counter = 0, started, sub_size;
 
 	for (x = 0; x <= spaces; x++)
 	{
@@ -86,7 +66,54 @@ char **strtow(char *str)
 			}
 		}
 	}
+}
 
+/**
+ * strtow - splits a string
+ * @str: string to split
+ *
+ * Return: splited string
+ */
+char **strtow(char *str)
+{
+	char *each, **final;
+	int spaces = 0, x, space_flag = 0, started = 0;
+	int y = 0, sub_size = 0, counter = 0;
+
+	if (str == NULL || strcmp(str, "") != 0)
+		return (NULL);
+	spaces = count_size(str);
+	final = malloc((spaces + 2) * sizeof(char *));
+
+	if (final == NULL)
+		return (NULL);
+
+	for (x = 0; x <= spaces; x++)
+	{
+		started = 0;
+		sub_size = 0;
+		for (; str[y] != '\0'; y++)
+		{
+			if (str[y] != ' ')
+			{
+				sub_size++;
+				started = 1;
+				space_flag = 1;
+				if (str[y + 1] == '\0')
+				{
+					each = malloc((sub_size + 1) * sizeof(char));
+					final[x] = each;
+				}
+			}
+			else if (str[y] == ' ' && started == 1)
+			{
+				each = malloc((sub_size + 1) * sizeof(char));
+				final[x] = each;
+				break;
+			}
+		}
+	}
+	initializer(spaces, str, final);
 	final[x] = NULL;
 	return (final);
 }
