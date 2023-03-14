@@ -85,10 +85,8 @@ char **strtow(char *str)
 	if (spaces < 0)
 		return (NULL);
 	final = malloc((spaces + 2) * sizeof(char *));
-
 	if (final == NULL)
 		return (NULL);
-
 	for (x = 0; x <= spaces; x++)
 	{
 		started = 0;
