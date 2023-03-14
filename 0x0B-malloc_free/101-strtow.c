@@ -32,7 +32,7 @@ int count_size(char *str)
 			}
 		}
 	}
-	return (spaces);
+	return (spaces >= 0 && started == 1 ? spaces : -1);
 }
 
 /**
@@ -79,9 +79,11 @@ char **strtow(char *str)
 	int spaces = 0, x, started = 0;
 	int y = 0, sub_size = 0;
 
-	if (str == NULL || strcmp(str, "") == 0 || strcmp(str, " ") == 0)
+	if (str == NULL || strcmp(str, "") == 0)
 		return (NULL);
 	spaces = count_size(str);
+	if (spaces < 0)
+		return (NULL);
 	final = malloc((spaces + 2) * sizeof(char *));
 
 	if (final == NULL)
