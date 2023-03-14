@@ -33,7 +33,6 @@ int **alloc_grid(int width, int height)
 			free(dim);
 			return (NULL);
 		}
-		dim[x] = k;
 	}
 
 	return (dim == NULL ? NULL : dim);
