@@ -13,7 +13,7 @@ char **strtow(char *str)
 	int spaces = 0, x, space_flag = 0, started = 0;
 	int y = 0, sub_size = 0, counter = 0;
 
-	if (str == NULL || strcmp(str, "")
+	if (str == NULL || strcmp(str, ""))
 		return (NULL);
 	for (x = 0; str[x] != '\0'; x++)
 	{
