@@ -13,7 +13,7 @@ int main(int argc, char *argv[] __attribute__((unused)))
 	int a, b, prod;
 
 	if (argc != 3)
-		printf("Eror\n");
+		printf("Error\n");
 	else
 	{
 		a = atoi(argv[1]);
