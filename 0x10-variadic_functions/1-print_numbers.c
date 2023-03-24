@@ -11,7 +11,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int x;
-	char *sep = separator == NULL ? "" : separator;
+	const char *sep = separator == NULL ? "" : separator;
 
 	va_start(ap, n);
 
