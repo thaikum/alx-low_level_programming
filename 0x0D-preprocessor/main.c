@@ -3,6 +3,6 @@
 
 int main(void)
 {
-	printf("my number is %d\n", abs(-98));
+	printf("my number is %d\n", ABS(1024 - 2048));
 	return (0);
 }
