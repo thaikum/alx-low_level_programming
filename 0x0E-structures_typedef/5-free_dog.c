@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
  * free_dog - frees the dog struct
@@ -7,6 +8,12 @@
  */
 void free_dog(dog_t *d)
 {
-	free(d->name);
-	free(d->owner);
+	if (d == NULL)
+		return;
+
+	if (d->name != NULL)
+		free(d->name);
+
+	if (d->owner != NULL)
+		free(d->owner);
 }
