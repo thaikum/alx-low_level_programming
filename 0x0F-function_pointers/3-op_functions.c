@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <stdlib.h>
 /**
  * op_add - adds two numbers
  * @a: first number
@@ -39,6 +41,11 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
+	if (b == 0)
+	{
+		puts("Error\n");
+		exit(99);
+	}
 	return (a / b);
 }
 
@@ -50,5 +57,10 @@ int op_div(int a, int b)
  */
 int op_mod(int a, int b)
 {
+	if (b == 0)
+	{
+		puts("Error\n");
+		exit(99);
+	}
 	return (a % b);
 }
