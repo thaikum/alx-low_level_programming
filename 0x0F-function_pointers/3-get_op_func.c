@@ -4,7 +4,7 @@
 /**
  * get_op_func - selects the correct function
  * @s: the operator
- * @Return: the function
+ * Return: the function
  */
 int (*get_op_func(char *s))(int, int)
 {
