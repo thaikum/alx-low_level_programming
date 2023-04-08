@@ -6,6 +6,8 @@
  * delete_nodeint_at_index - deletes a node at a given index
  * @head: the list head
  * @index: index to delete
+ *
+ * Return: 1 if successful and -1 if otherwise
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
@@ -14,7 +16,7 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *current_node = *head, *prev_node = *head;
 
 	if (!head || !(*head))
-		return (0);
+		return (-1);
 
 	for (x = 0; current_node && x <= index; x++, prev_node = current_node,
 		     current_node = current_node->next)
