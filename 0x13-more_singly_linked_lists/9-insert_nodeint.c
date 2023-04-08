@@ -17,17 +17,20 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	do
 	{
-		if (idx - k == 1 || idx = 0)
+		if (idx - k == 1 || idx == 0)
 		{
 			swap_space = malloc(sizeof(listint_t));
 			if (!swap_space)
 				return (NULL);
 
 			swap_space->n = n;
-			swap_space->next = current_node ?
-				current_node->next : NULL;
-			
-			current_node->next = swap_space;
+			swap_space->next = idx != 0 ?
+				current_node->next : current_node;
+
+			if (idx != 0)
+				current_node->next = swap_space;
+			else
+				*head = swap_space;
 			return (swap_space);
 		}
 		k++;
