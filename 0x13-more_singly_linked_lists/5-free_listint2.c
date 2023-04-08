@@ -10,7 +10,10 @@ void free_listint2(listint_t **head)
 {
 	listint_t *cur_ptr = NULL;
 
-	if ((**head) == NULL || (*head) == NULL)
+	if (sizeof(**head) != 8)
+		return;
+
+	if ((*head) == NULL)
 		return;
 
 	while ((*head)->next)
