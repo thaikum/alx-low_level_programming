@@ -13,7 +13,7 @@ void to_binary(unsigned long int n, int power)
 		return;
 
 	to_binary(n, power + 1);
-	k = ((1 << power) & n) ? '1' : '0';
+	k = ((1ul << power) & n) ? '1' : '0';
 	_putchar(k);
 }
 
