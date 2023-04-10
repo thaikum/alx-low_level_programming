@@ -2,11 +2,13 @@
 
 /**
  * to_binary - prints the binary of a number
- * @n; the number
+ * @n: the number
  * @power: is initially 0. indicates the index on the binary string
  */
-void to_binary(unsigned long int n, int power) {
+void to_binary(unsigned long int n, int power)
+{
 	char k;
+
 	if ((n >> power) == 0)
 		return;
 
