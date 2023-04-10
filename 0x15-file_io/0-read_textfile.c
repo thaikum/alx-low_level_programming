@@ -15,6 +15,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd = open(filename, O_RDONLY);
 	ssize_t s;
 	char *buff = malloc(letters * sizeof(char));
+	ssize_t errors[] = {11, 9, 89, 14, 27, 4, 22, 5, 1};
+	int x;
 
 	if (!fd || !buff || !filename)
 	{
@@ -24,8 +26,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	s = read(fd, buff, letters);
 
-	if (!s)
-		return (0);
+	for (x = 0; x < 9; x++)
+		if (s == errors[x])
+			return (0);
 
 	write(STDOUT_FILENO, buff, letters);
 	free(buff);
