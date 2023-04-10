@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * pow - powers a number
+ * _pow - powers a number
  * @x: the base
  * @y: the index
  *
@@ -33,7 +33,7 @@ unsigned int binary_to_uint(const char *b)
 		return (0);
 	len = strlen(b) - 1;
 
-	for(; len >=0; len--, pwer++)
+	for (; len >= 0; len--, pwer++)
 	{
 		if (b[len] == '1')
 			result += _pow(2, pwer);
