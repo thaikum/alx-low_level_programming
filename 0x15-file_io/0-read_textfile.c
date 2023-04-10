@@ -30,9 +30,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		if (s == errors[x])
 			return (0);
 
-	write(STDOUT_FILENO, buff, letters);
-	free(buff);
-	buff = NULL;
-	return (s);
+	if ( s == write(STDOUT_FILENO, buff, letters))
+	{
+		free(buff);
+		buff = NULL;
+		return (s);
+	}
+	return (0);
 
 }
