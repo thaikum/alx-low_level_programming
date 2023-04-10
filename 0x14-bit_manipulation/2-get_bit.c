@@ -9,5 +9,5 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	return ((1ul << (index - 1) & n) ? 1 : 0);
+	return ((n >> index) & 1);
 }
