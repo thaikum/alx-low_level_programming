@@ -18,7 +18,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t errors[] = {11, 9, 89, 14, 27, 4, 22, 5, 1};
 	int x;
 
-	if (!fd || !buff || !filename)
+	if (fd < 0 || !buff || !filename)
 	{
 		free(buff);
 		return (0);
