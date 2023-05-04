@@ -1,0 +1,12 @@
+/**
+ * get_endianness - determinces whether a cpu is little endian or big endian
+ *
+ * @Return: 0 if big endian 1 if little endian
+ */
+int get_endianness(void)
+{
+	unsigned int hex = 0x11223344;
+	char *first = (char *) &hex;
+
+	return (*first == 0x44);
+}
